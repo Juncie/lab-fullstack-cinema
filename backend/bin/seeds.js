@@ -1,12 +1,17 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true});
-
+const Movie = require('../models/Movie')
+mongoose.connect('mongodb://localhost:27017/movies', {useNewUrlParser: true, useUnifiedTopology: true})
+.then(async (sell)=> {
+  await Movie.deleteMany()
+  await Movie.insertMany(movies)
+  
+})
 
 
 
 const movies = [
     {
-      title: "A Wrinkle in Time",
+      title: "Genie and the Billionaire",
       director: "Ava DuVernay",
       stars: ["Storm Reid", "Oprah Winfrey", "Reese Witherspoon"],
       image:
