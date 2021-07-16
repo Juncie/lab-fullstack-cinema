@@ -19,6 +19,5 @@
   "bin": {
     "backend": "seeds.js"
   },
-  "devDependencies": {},
   "description": ""
 }
