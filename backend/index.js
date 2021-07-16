@@ -14,4 +14,11 @@ app.get('/listOfMovies', (req, res) => {
     })
 })
 
+app.get('/movieDetails/:dynamicId', (req, res) => {
+    console.log(req.params);
+    Movie.findOne({_id: req.params.dynamicId}).then((movies) => {
+        res.json(movies);
+    })
+})
+
 app.listen(5000)

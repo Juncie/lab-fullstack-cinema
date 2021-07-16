@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios"
+import axios from "axios";
+import { Link } from 'react-router-dom';
 
 function Movies(props) {
 
@@ -16,6 +17,7 @@ function Movies(props) {
                 <div>
                     <img src={eachMovie.image}/>
                     <h3>{eachMovie.title}</h3>
+                    <Link to={`movie/${eachMovie._id}`}>See more</Link>
                 </div>
             )
         })
@@ -23,8 +25,11 @@ function Movies(props) {
 
     return (
         <div>
-            {ShowMovies()}
-            this is the movies
+            <h2>Ironhack Cinema</h2>
+            <main>
+                {ShowMovies()}
+                this is the movies
+            </main>
         </div>
     );
 }

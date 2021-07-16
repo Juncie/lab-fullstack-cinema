@@ -13,6 +13,16 @@
   }
 }
 
+main  {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+main div {
+  width: 33%;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
