@@ -1,27 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-import { Route, Link, Switch } from 'react-router';
-import Home from './components/Home';
-import MovieList from './components/MovieList';
+import logo from "./logo.svg";
+import { Switch, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./components/Home";
+import Movies from "./components/Movies";
+import Details from "./components/Details";
+import NewMovies from "./components/NewMovies";
 
 function App() {
   return (
-  <div>
-    
-    <Switch>
-      
-      <Route exact path="/" render={() => <Home />} />
-      <Route exact path="/MoviesList" render={() => <MovieList />} />
-      
-      
-    </Switch>
-  
-
-
-  </div>
-    
-
-   
+    <div className="App">
+      <Switch>
+        <Route exact path="/" render={(props) => <Home />} />
+        <Route exact path="/movies" render={(props) => <Movies />} />
+        <Route
+          exact
+          path="/movie/:dynamicId"
+          render={(props) => <Details {...props} />}
+        />
+        <Route exact path="/newmovie" render={(props) => <NewMovies />} />
+      </Switch>
+    </div>
   );
 }
 
